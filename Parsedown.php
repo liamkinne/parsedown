@@ -11,7 +11,7 @@
 # For the full license information, view the LICENSE file that was distributed
 # with this source code.
 #
-#
+# Modified by Liam Kinne <kinneliam@gmail.com><liamkinne.com>
 
 class Parsedown
 {
@@ -42,6 +42,16 @@ class Parsedown
         $markup = trim($markup, "\n");
 
         return $markup;
+    }
+
+    function getTitle($text)
+    {
+        # Get first line
+        $text = strstr($text,"\n",true);
+        # Remove "# "
+        $text = str_replace("# ", "", $text);
+        return $text;
+        
     }
 
     #
